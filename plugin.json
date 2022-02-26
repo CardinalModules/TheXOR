@@ -7,8 +7,8 @@
   "author": "The XOR",
   "authorEmail": "",
   "authorUrl": "",
-  "pluginUrl": "",
-  "manualUrl": "",
+  "pluginUrl": "https://github.com/CardinalModules/TheXOR",
+  "manualUrl": "https://github.com/CardinalModules/TheXOR/blob/uno/README.md",
   "sourceUrl": "https://github.com/The-XOR/RackPlugins",
   "donateUrl": "",
   "modules": [

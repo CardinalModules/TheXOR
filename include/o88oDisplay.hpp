@@ -16,6 +16,7 @@ struct o88oDisplay : OpenGlWidget
 	{
 		if(pmodule == NULL)
 			return;
+		math::Vec fbSize = getFramebufferSize();
 		float square_dim = fbSize.x / NUM_o88o_RECT - margin;
 
 		glViewport(0.0, 0.0, fbSize.x, fbSize.y);

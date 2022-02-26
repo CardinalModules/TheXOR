@@ -119,7 +119,7 @@ struct midiQtzDriverItem : ui::MenuItem
 	int driverId;
 	void onAction(const event::Action &e) override 
 	{
-		port->setDriverId(driverId);
+// 		port->setDriverId(driverId);
 	}
 };
 
@@ -128,20 +128,20 @@ struct midiQtzDriverChoice : LedDisplayChoice
 	midi::Port *port = NULL;
 	void onAction(const event::Action &e) override 
 	{
-		if (port != NULL)
-		{
-			ui::Menu *menu = createMenu();
-			menu->addChild(createMenuLabel("MIDI driver"));
-			for (int driverId : port->getDriverIds()) 
-			{
-				midiQtzDriverItem *item = new midiQtzDriverItem;
-				item->port = port;
-				item->driverId = driverId;
-				item->text = port->getDriverName(driverId);
-				item->rightText = CHECKMARK(item->driverId == port->driverId);
-				menu->addChild(item);
-			}
-		}
+// 		if (port != NULL)
+// 		{
+// 			ui::Menu *menu = createMenu();
+// 			menu->addChild(createMenuLabel("MIDI driver"));
+// 			for (int driverId : port->getDriverIds()) 
+// 			{
+// 				midiQtzDriverItem *item = new midiQtzDriverItem;
+// 				item->port = port;
+// 				item->driverId = driverId;
+// 				item->text = port->getDriverName(driverId);
+// 				item->rightText = CHECKMARK(item->driverId == port->driverId);
+// 				menu->addChild(item);
+// 			}
+// 		}
 	}
 
 	void step() override 
@@ -164,7 +164,7 @@ struct midiQtzDeviceItem : ui::MenuItem
 	int deviceId;
 	void onAction(const event::Action &e) override 
 	{
-		port->setDeviceId(deviceId);
+// 		port->setDeviceId(deviceId);
 	}
 };
 
@@ -173,28 +173,28 @@ struct midiQtzDeviceChoice : LedDisplayChoice
 	midi::Port *port = NULL;
 	void onAction(const event::Action &e) override 
 	{
-		if (port != NULL)
-		{
-			ui::Menu *menu = createMenu();
-			menu->addChild(createMenuLabel("MIDI device"));
-			{
-				midiQtzDeviceItem *item = new midiQtzDeviceItem;
-				item->port = port;
-				item->deviceId = -1;
-				item->text = "(No device)";
-				item->rightText = CHECKMARK(item->deviceId == port->deviceId);
-				menu->addChild(item);
-			}
-			for (int deviceId : port->getDeviceIds()) 
-			{
-				midiQtzDeviceItem *item = new midiQtzDeviceItem;
-				item->port = port;
-				item->deviceId = deviceId;
-				item->text = port->getDeviceName(deviceId);
-				item->rightText = CHECKMARK(item->deviceId == port->deviceId);
-				menu->addChild(item);
-			}
-		}
+// 		if (port != NULL)
+// 		{
+// 			ui::Menu *menu = createMenu();
+// 			menu->addChild(createMenuLabel("MIDI device"));
+// 			{
+// 				midiQtzDeviceItem *item = new midiQtzDeviceItem;
+// 				item->port = port;
+// 				item->deviceId = -1;
+// 				item->text = "(No device)";
+// 				item->rightText = CHECKMARK(item->deviceId == port->deviceId);
+// 				menu->addChild(item);
+// 			}
+// 			for (int deviceId : port->getDeviceIds()) 
+// 			{
+// 				midiQtzDeviceItem *item = new midiQtzDeviceItem;
+// 				item->port = port;
+// 				item->deviceId = deviceId;
+// 				item->text = port->getDeviceName(deviceId);
+// 				item->rightText = CHECKMARK(item->deviceId == port->deviceId);
+// 				menu->addChild(item);
+// 			}
+// 		}
 	}
 
 	void step() override 

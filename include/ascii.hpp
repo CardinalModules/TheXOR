@@ -8,20 +8,20 @@ struct asciiWidget : ModuleWidget
 {
 	asciiWidget(ascii *module);
 
-	json_t *toJson() override 
-	{
-		json_t *rootJ = ModuleWidget::toJson();
-		json_object_set_new(rootJ, "text", json_string(textField->text.c_str()));
-		return rootJ;
-	}
-
-	void fromJson(json_t *rootJ) override 
-	{
-		ModuleWidget::fromJson(rootJ);
-		json_t *textJ = json_object_get(rootJ, "text");
-		if (textJ)
-			textField->text = json_string_value(textJ);
-	}
+// 	json_t *toJson() override 
+// 	{
+// 		json_t *rootJ = ModuleWidget::toJson();
+// 		json_object_set_new(rootJ, "text", json_string(textField->text.c_str()));
+// 		return rootJ;
+// 	}
+// 
+// 	void fromJson(json_t *rootJ) override 
+// 	{
+// 		ModuleWidget::fromJson(rootJ);
+// 		json_t *textJ = json_object_get(rootJ, "text");
+// 		if (textJ)
+// 			textField->text = json_string_value(textJ);
+// 	}
 private:
 	TextField *textField;
 };

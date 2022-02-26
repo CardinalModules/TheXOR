@@ -8,7 +8,7 @@ float SequencerWidget::quantizePitch(int idx, float value, const cvMicroStrip &c
 	int index = getParamIndex(idx);
 	if(index >= 0)
 	{
-		params[index]->paramQuantity->setValue(value);
+// 		params[index]->paramQuantity->setValue(value);
 	}
 
 	return value;

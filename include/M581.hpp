@@ -98,7 +98,7 @@ struct CounterSwitch : SvgSlider
 		handle->wrap();
 	}
 
-	void randomize() override { paramQuantity->setValue(roundf(random::uniform() * paramQuantity->getMaxValue())); }
+// 	void randomize() override { getParamQuantity()->setValue(roundf(random::uniform() * getParamQuantity()->getMaxValue())); }
 };
 
 struct M581 : Module

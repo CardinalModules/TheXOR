@@ -375,11 +375,11 @@ void KleeWidget::onMenu(int action)
 		case SET_RANGE_1V:
 		{
 			int index = getParamIndex(Klee::RANGE);
-			if(index >= 0)
-				params[index]->paramQuantity->setValue(0.0);
-			index = getParamIndex(Klee::RANGE+1);
-			if(index >= 0)
-				params[index]->paramQuantity->setValue(1.0);
+// 			if(index >= 0)
+// 				params[index]->paramQuantity->setValue(0.0);
+// 			index = getParamIndex(Klee::RANGE+1);
+// 			if(index >= 0)
+// 				params[index]->paramQuantity->setValue(1.0);
 		}
 		break;
 		case QUANTIZE_PITCH: ((Klee *)module)->QuantizePitch(); break;

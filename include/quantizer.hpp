@@ -13,7 +13,7 @@ struct quantizeModule;
 
 static std::vector<const char *> QuantizerRootNotes = {"C", "C#", "D", "D#", "E", "F", "F#","G","G#","A","A#","B"};
 
-struct MidiOutput : midi::Output 
+struct MidiOutput /*: midi::Output */
 {
 	bool playingNotes[128];
 
@@ -32,7 +32,7 @@ struct MidiOutput : midi::Output
 			m.setStatus(0x8);
 			m.setNote(note);
 			m.setValue(0);
-			sendMessage(m);
+// 			sendMessage(m);
 		}
 	}
 
@@ -44,7 +44,7 @@ struct MidiOutput : midi::Output
 			m.setStatus(gate ? 0x9 : 0x08);
 			m.setNote(note);
 			m.setValue(vel);
-			sendMessage(m);		
+// 			sendMessage(m);		
 			playingNotes[note] = gate;
 		}
 	}
@@ -328,16 +328,16 @@ struct midyQuant : Module, quantizeModule
 	json_t *dataToJson() override
 	{
 		json_t *rootJ = qtzToJson();
-		json_object_set_new(rootJ, "midi", midiOutput.toJson());
+// 		json_object_set_new(rootJ, "midi", midiOutput.toJson());
 		return rootJ;
 	}
 
 	void dataFromJson(json_t *rootJ) override
 	{
 		qtzFromJson(rootJ);
-		json_t *bpmJson = json_object_get(rootJ, "midi");
-		if (bpmJson)
-			midiOutput.fromJson(bpmJson);
+// 		json_t *bpmJson = json_object_get(rootJ, "midi");
+// 		if (bpmJson)
+// 			midiOutput.fromJson(bpmJson);
 
 		on_loaded();
 	}

@@ -3,6 +3,7 @@
 struct emptyDisplay : LedDisplayChoice
 {
 	const empty *pModule;
+	std::shared_ptr<Font> font;
 
 	emptyDisplay() : LedDisplayChoice()
 	{

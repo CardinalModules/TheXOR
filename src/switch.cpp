@@ -69,7 +69,7 @@ void SwitchWidget::SetSwitch(int n, bool status)
 	if(index >= 0)
 	{
 		//params[index]->dirtyValue = 
-		params[index]->paramQuantity->setValue(status ? 1.0 : 0.0);
+// 		params[index]->paramQuantity->setValue(status ? 1.0 : 0.0);
 	}
 }
 	

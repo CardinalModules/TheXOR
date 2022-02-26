@@ -23,12 +23,6 @@
 using namespace rack;
 extern Plugin *pluginInstance;
 
-#ifdef ARCH_MAC 
-typedef std::chrono::time_point<std::chrono::steady_clock> fuck_mac_os;
-#else
-typedef std::chrono::time_point<std::chrono::system_clock> fuck_mac_os;
-#endif
-
 inline float px2mm(float px) { return px * (MM_PER_IN / SVG_DPI); }
 inline float yncscape(float y, float height) { return RACK_GRID_HEIGHT - mm2px(y + height); }
 static constexpr float SEMITONE = 1.0f / 12.0f;// 1/12 V
@@ -116,10 +110,10 @@ struct CKD6Bsmall : app::SvgSwitch
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/CKD6B_1small.svg")));
 		fb->removeChild(shadow);
 	}
-	void randomize() override
-	{
-		// do NOT randomaiz
-	}
+// 	void randomize() override
+// 	{
+// 		// do NOT randomaiz
+// 	}
 };
 
 struct _davies1900base : Davies1900hKnob
@@ -129,13 +123,13 @@ struct _davies1900base : Davies1900hKnob
 		setSvg(APP->window->loadSvg(asset::plugin(pluginInstance, res)));
 	}
 
-	void randomize() override
-	{
-		if(snap)
-			paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
-		else
-			Davies1900hKnob::randomize();
-	}
+// 	void randomize() override
+// 	{
+// 		if(snap)
+// 			paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
+// 		else
+// 			Davies1900hKnob::randomize();
+// 	}
 };
 
 struct Davies1900hLargeFixRedKnob : _davies1900base
@@ -177,28 +171,28 @@ struct Davies1900hFixRedKnobSmall : _davies1900base
 struct daviesVerySmallBlack : _davies1900base
 {
 	daviesVerySmallBlack() : _davies1900base("res/Davies1900hBlackVerySmall.svg") {}
-	void randomize() override
-	{
-		// do NOT randomaiz
-	}
+// 	void randomize() override
+// 	{
+// 		// do NOT randomaiz
+// 	}
 };
 
 struct daviesVerySmallWhite : _davies1900base
 {
 	daviesVerySmallWhite() : _davies1900base("res/Davies1900hWhiteVerySmall.svg") {}
-	void randomize() override
-	{
-		// do NOT randomaiz
-	}
+// 	void randomize() override
+// 	{
+// 		// do NOT randomaiz
+// 	}
 };
 
 struct daviesVerySmallRed : _davies1900base
 {
 	daviesVerySmallRed() : _davies1900base("res/Davies1900hRedVerySmall.svg") {}
-	void randomize() override
-	{
-		// do NOT randomaiz
-	}
+// 	void randomize() override
+// 	{
+// 		// do NOT randomaiz
+// 	}
 };
 
 struct _ioPort : SvgPort
@@ -321,10 +315,10 @@ struct CKSSThreeFix : app::SvgSwitch
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/CKSSThree_1.svg")));
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/CKSSThree_2.svg")));
 	}
-	void randomize() override
-	{
-		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
-	}
+// 	void randomize() override
+// 	{
+// 		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
+// 	}
 };
 
 struct ABCDSwitch : app::SvgSwitch
@@ -336,10 +330,10 @@ struct ABCDSwitch : app::SvgSwitch
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/abcd_3.svg")));
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/abcd_4.svg")));
 	}
-	void randomize() override
-	{
-		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
-	}
+// 	void randomize() override
+// 	{
+// 		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
+// 	}
 };
 
 struct BoolSwitch : app::SvgSwitch
@@ -351,10 +345,10 @@ struct BoolSwitch : app::SvgSwitch
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/bool_3.svg")));
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/bool_4.svg")));
 	}
-	void randomize() override
-	{
-		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
-	}
+// 	void randomize() override
+// 	{
+// 		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
+// 	}
 };
 
 struct TL1105HSw : app::SvgSwitch
@@ -370,17 +364,17 @@ struct TL1105HSwRed : app::SvgSwitch
 {
 	TL1105HSwRed()
 	{
-		randomizable = true;
+// 		randomizable = true;
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/TL1105_H0.svg")));
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/TL1105_HB1.svg")));
 	};
 
-	void randomize() override
-	{
-		if(randomizable)
-			app::SvgSwitch::randomize();
-	}
-	bool randomizable;
+// 	void randomize() override
+// 	{
+// 		if(randomizable)
+// 			app::SvgSwitch::randomize();
+// 	}
+// 	bool randomizable;
 };
 
 struct TL1105HBSw : app::SvgSwitch
@@ -396,32 +390,32 @@ struct TL1105Sw : app::SvgSwitch
 {
 	TL1105Sw()
 	{
-		randomizable = true;
+// 		randomizable = true;
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/TL1105_0.svg")));
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/TL1105_1.svg")));
 	};
-	void randomize() override
-	{
-		if(randomizable)
-			app::SvgSwitch::randomize();
-	}
-	bool randomizable;
+// 	void randomize() override
+// 	{
+// 		if(randomizable)
+// 			app::SvgSwitch::randomize();
+// 	}
+// 	bool randomizable;
 };
 
 struct TL1105Sw2 : app::SvgSwitch
 {
 	TL1105Sw2()
 	{
-		randomizable = true;
+// 		randomizable = true;
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/TL1105_2.svg")));
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/TL1105_1.svg")));
 	};
-	void randomize() override
-	{
-		if(randomizable)
-			app::SvgSwitch::randomize();
-	}
-	bool randomizable;
+// 	void randomize() override
+// 	{
+// 		if(randomizable)
+// 			app::SvgSwitch::randomize();
+// 	}
+// 	bool randomizable;
 };
 
 struct SchmittTrigger2
@@ -482,10 +476,10 @@ struct LevettaR : app::SvgSwitch
 		fb->removeChild(shadow);
 	}
 
-	void randomize() override
-	{
-		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
-	}
+// 	void randomize() override
+// 	{
+// 		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
+// 	}
 };
 
 struct Levetta3PosR : app::SvgSwitch
@@ -498,10 +492,10 @@ struct Levetta3PosR : app::SvgSwitch
 		fb->removeChild(shadow);
 	}
 
-	void randomize() override
-	{
-		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
-	}
+// 	void randomize() override
+// 	{
+// 		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
+// 	}
 };
 
 struct LevettaB : app::SvgSwitch
@@ -513,10 +507,10 @@ struct LevettaB : app::SvgSwitch
 		fb->removeChild(shadow);
 	}
 
-	void randomize() override
-	{
-		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
-	}
+// 	void randomize() override
+// 	{
+// 		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
+// 	}
 };
 
 struct Levetta3PosB : app::SvgSwitch
@@ -529,10 +523,10 @@ struct Levetta3PosB : app::SvgSwitch
 		fb->removeChild(shadow);
 	}
 
-	void randomize() override
-	{
-		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
-	}
+// 	void randomize() override
+// 	{
+// 		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
+// 	}
 };
 
 struct LevettaW : app::SvgSwitch
@@ -544,10 +538,10 @@ struct LevettaW : app::SvgSwitch
 		fb->removeChild(shadow);
 	}
 
-	void randomize() override
-	{
-		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
-	}
+// 	void randomize() override
+// 	{
+// 		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
+// 	}
 };
 
 struct Levetta3PosW : app::SvgSwitch
@@ -560,10 +554,10 @@ struct Levetta3PosW : app::SvgSwitch
 		fb->removeChild(shadow);
 	}
 
-	void randomize() override
-	{
-		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
-	}
+// 	void randomize() override
+// 	{
+// 		paramQuantity->setValue(roundf(rescale(random::uniform(), 0.0, 1.0, paramQuantity->getMinValue(), paramQuantity->getMaxValue())));
+// 	}
 };
 
 struct VerticalSwitch : SvgSlider
@@ -581,7 +575,7 @@ struct VerticalSwitch : SvgSlider
 		handle->wrap();
 	}
 
-	void randomize() override { paramQuantity->setValue(roundf(random::uniform() * paramQuantity->getMaxValue())); }
+// 	void randomize() override { paramQuantity->setValue(roundf(random::uniform() * paramQuantity->getMaxValue())); }
 };
 
 template<class T> struct SeqMenuItem : ui::MenuItem
@@ -612,7 +606,7 @@ public:
 			int index = getParamIndex(k);
 			if(index >= 0)
 			{
-				params[index]->randomize();
+// 				params[index]->randomize();
 			}
 		}
 	}
@@ -624,7 +618,7 @@ public:
 		int index = getParamIndex(idx);
 		if(index >= 0)
 		{
-			params[index]->paramQuantity->setValue(value);
+// 			params[index]->getParamQuantity()->setValue(value);
 		}
 	}
 
@@ -635,9 +629,9 @@ protected:
 
 	int getParamIndex(int index)
 	{
-		auto it = std::find_if(params.begin(), params.end(), [&index](const ParamWidget *m) -> bool { return m->paramQuantity->paramId == index; });
-		if(it != params.end())
-			return std::distance(params.begin(), it);
+// 		auto it = std::find_if(params.begin(), params.end(), [&index](const ParamWidget *m) -> bool { return m->paramQuantity->paramId == index; });
+// 		if(it != params.end())
+// 			return std::distance(params.begin(), it);
 		return -1;
 	}
 

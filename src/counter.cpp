@@ -138,10 +138,10 @@ void CounterWidget::SetCounter(int n)
 	if(index >= 0)
 	{
 		// VCV interface update is ahem.... migliorabile....
-		Davies1900hFixWhiteKnob *pKnob = (Davies1900hFixWhiteKnob *)params[index];
-		bool smooth = pKnob->smooth;
-		pKnob->smooth = false;
-		params[index]->paramQuantity->setValue((float)n);
-		pKnob->smooth = smooth;
+// 		Davies1900hFixWhiteKnob *pKnob = (Davies1900hFixWhiteKnob *)params[index];
+// 		bool smooth = pKnob->smooth;
+// 		pKnob->smooth = false;
+// 		params[index]->paramQuantity->setValue((float)n);
+// 		pKnob->smooth = smooth;
 	}
 }

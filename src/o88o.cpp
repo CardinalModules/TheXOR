@@ -312,7 +312,7 @@ o88oWidget::o88oWidget(o88o *module)
 
 void o88oWidget::SetPattern(int ptn)
 {
-	int index = getParamIndex(o88o::PATTERN);
-	if(index >= 0)
-		params[index]->paramQuantity->setValue(ptn);
+// 	int index = getParamIndex(o88o::PATTERN);
+// 	if(index >= 0)
+// 		params[index]->paramQuantity->setValue(ptn);
 }

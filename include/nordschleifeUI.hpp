@@ -15,10 +15,10 @@ struct CKD6B : app::SvgSwitch
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/CKD6B_0.svg")));
 		addFrame(APP->window->loadSvg(asset::plugin(pluginInstance, "res/CKD6B_1.svg")));
 	}
-	void randomize() override
-	{
-		// do NOT randomaiz
-	}
+// 	void randomize() override
+// 	{
+// 		// do NOT randomaiz
+// 	}
 };
 
 struct StepSelector : app::SvgSwitch

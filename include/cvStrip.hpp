@@ -280,11 +280,11 @@ private:
 		pWidget->addInput(createInput<portSmall>(Vec(pos_x(x, 1.072f), pos_y(y, 1.358f, 5.885f)), pWidget->module, GATE_IN));
 
 		ParamWidget *pwdg = createParam<TL1105HSwRed>(Vec(pos_x(x, 1.130f), pos_y(y, 37.650f, 4.477f)), pWidget->module, PARAM_REC);
-		((TL1105HSwRed *)pwdg)->randomizable = false;
+// 		((TL1105HSwRed *)pwdg)->randomizable = false;
 		pWidget->addParam(pwdg);
 
 		pwdg = createParam<TL1105Sw>(Vec(pos_x(x, 1.597f), pos_y(y, 10.367f, 6.607f)), pWidget->module, PARAM_MANU);
-		((TL1105HSwRed *)pwdg)->randomizable = false;
+// 		((TL1105HSwRed *)pwdg)->randomizable = false;
 		pWidget->addParam(pwdg);
 
 		pwdg = createParam<RIGHTSWITCH>(Vec(pos_x(x, 2.375f), pos_y(y, 29.497f, 4.627f)), pWidget->module, PARAM_NEXT);
